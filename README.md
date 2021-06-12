@@ -2,10 +2,13 @@
 SoftwareEng Final Project - Jiyoung Diary
 
 
->pip install -r requirements.txt 
+>pip install -r requirements.txt <br>
+>set FLASK_APP=flaskr<br>
+>set FLASK_ENV=development<br>
+>flask init-db<br>
+>flask run
 
 
-<hr>
 소프트웨어 공학 기말 개인 프로젝트 - 다이어리 만들기 
 
 1) Usecase Diagram
