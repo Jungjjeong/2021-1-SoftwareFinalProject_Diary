@@ -1,0 +1,53 @@
+<!doctype html>
+<title>{% block title %}{% endblock %}Jiyoung Diary</title>
+<style type="text/css">
+  html { font-family: sans-serif; background: linear-gradient( to right, rgb(53, 53, 53), rgb(19, 19, 19) ); padding: 1rem; }
+  body { max-width: 960px; margin: 0 auto; background: white; border-radius:10px; box-shadow: 4px 4px 6px rgba(63, 64, 70, 0.479);}
+  h1 { font-family: sans-serif; color: #5e5e5e; margin: 1rem 0; }
+  hr { border: none; border-top: 1px solid lightgray; }
+  nav { background-image : url("{{ url_for('static',filename='ba.png')}}"); background-size: cover; display: flex; height: 300px; align-items: center; padding: 0 0.5rem; border-radius:10px 10px 0px 0px; }
+  nav h1 { flex: auto; margin: 0; }
+  nav h1 a { text-decoration: none; padding: 0.25rem 0.5rem; }
+  nav ul  { display: flex; list-style: none; margin: 0; padding: 0; }
+  nav ul li a, nav ul li span, header .action { display: block; padding: 0.5rem; }
+  .content { padding: 0 1rem 1rem; }
+  .content > header { border-bottom: 1px solid #5e5e5e; display: flex; align-items: flex-end; }
+  .content > header h1 { flex: auto; margin: 1rem 0 0.25rem 0; }
+  .flash { margin: 1em 0; padding: 1em; background: #cae6f6; border: 1px solid #5e5e5e; }
+  .post > header { display: flex; align-items: flex-end; font-size: 0.85em; }
+  .post > header > div:first-of-type { flex: auto; }
+  .post > header h1 { font-size: 1.5em; margin-bottom: 0; }
+  .post .about { color: #5e5e5e; }
+  .post .body { white-space: pre-line; }
+  .content:last-child { margin-bottom: 0; }
+  .content form { margin: 1em 0; display: flex; flex-direction: column; }
+  .content label { font-weight: bold; margin-bottom: 0.5em; }
+  .content input, .content textarea { margin-bottom: 1em; }
+  .content textarea { min-height: 12em; resize: vertical; }
+  input.danger { color: #975a5a; }
+  input[type=submit] { align-self: start; min-width: 10em; }
+  </style>
+
+
+<nav>
+  <h1 style="color:rgb(255, 255, 255); padding: 3em">Jiyoung Diary</h1>
+    <ul>
+        {% if g.user %}
+          <li><span style="color: rgb(175, 175, 175);">{{ g.user['username'] }}님 환영합니다.</span>
+          <li><a href="{{ url_for('auth.logout') }}" style="color:rgb(255, 255, 255);" >로그아웃</a>
+        {% else %}
+          <li><a href="{{ url_for('auth.register') }}">가입하기</a>
+          <li><a href="{{ url_for('auth.login') }}">로그인</a>
+        {% endif %}
+    </ul>
+</nav>
+<section class="content">
+    <header>
+        {% block header %}{% endblock %}
+    </header>
+
+    {% for message in get_flashed_messages() %}
+        <div class="flash">{{ message }}</div>
+    {% endfor %}
+    {% block content %}{% endblock %}
+</section>

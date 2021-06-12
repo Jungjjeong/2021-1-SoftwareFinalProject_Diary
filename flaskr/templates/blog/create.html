@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}새로운 글 작성{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="title">제목</label>
+    <input name="title" id="title" value="{{ request.form['title'] }}">
+    <label for="body">내용</label>
+    <textarea name="body" id="body">{{ request.form['body'] }}</textarea>
+    <label for="img">이미지 주소</label>
+    <input name="img" id="img" value="{{ request.form['img'] }}">
+    <input type="submit" value="작성 완료">
+  </form>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}글 수정 "{{ post['title'] }}"{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label for="title">제목</label>
+    <input name="title" id="title"
+        value="{{ request.form['title'] or post['title'] }}">
+    <label for="body">글 내용</label>
+    <textarea name="body" id="body">{{ request.form['body'] or post['body'] }}</textarea>
+    <label for="img">이미지 주소</label>
+    <input name="img" id="img" value="{{ request.form['img'] or post['img'] }}">
+    <input type="submit" value="수정 완료">
+  </form>
+  <hr>
+  <form action="{{ url_for('blog.delete', id=post['id']) }}" method="post">
+     <input class="danger" type="submit" value="글 삭제" onclick="return confirm('정말로 삭제하시겠습니까?');">
+  </form>
+{% endblock %}
