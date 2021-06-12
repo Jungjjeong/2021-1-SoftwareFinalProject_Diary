@@ -9,8 +9,6 @@ SoftwareEng Final Project - Jiyoung Diary
 >flask run
 
 
-
-<hr>
 소프트웨어 공학 기말 개인 프로젝트 - 다이어리 만들기 
 
 1) Usecase Diagram
