@@ -1,6 +1,10 @@
 # SoftwareFinalProject_Diary
 SoftwareEng Final Project - Jiyoung Diary
 
+
+  pip install -r requirements.txt 
+
+
 <hr>
 소프트웨어 공학 기말 개인 프로젝트 - 다이어리 만들기 
 
@@ -14,7 +18,3 @@ SoftwareEng Final Project - Jiyoung Diary
 ![image](https://user-images.githubusercontent.com/72294509/121783179-40815100-cbe8-11eb-8d71-c65fa7bcf7c3.png)
 
 <hr>
-
-'''
-pip install -r requirements.txt 
-'''
