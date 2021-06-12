@@ -2,10 +2,10 @@
 SoftwareEng Final Project - Jiyoung Diary
 
 
->pip install -r requirements.txt 
->set FLASK_APP=flaskr
->set FLASK_ENV=development
->flask init-db
+>pip install -r requirements.txt <br>
+>set FLASK_APP=flaskr<br>
+>set FLASK_ENV=development<br>
+>flask init-db<br>
 >flask run
 
 
