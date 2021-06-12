@@ -2,7 +2,7 @@
 SoftwareEng Final Project - Jiyoung Diary
 
 
-  pip install -r requirements.txt 
+   pip install -r requirements.txt 
 
 
 <hr>
