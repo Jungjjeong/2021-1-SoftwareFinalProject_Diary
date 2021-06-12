@@ -12,3 +12,9 @@ SoftwareEng Final Project - Jiyoung Diary
 
 3) Class Diagram
 ![image](https://user-images.githubusercontent.com/72294509/121783179-40815100-cbe8-11eb-8d71-c65fa7bcf7c3.png)
+
+<hr>
+
+'''
+pip install -r requirements.txt 
+'''
